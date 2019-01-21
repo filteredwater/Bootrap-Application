@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SampleGeneratingSceneController">
+
+   <content>
+       <VBox fx:id="SampleGeneratingVBox" prefHeight="600.0" prefWidth="800.0" spacing="10.0" style="-fx-background-color: #45b7b8;">
+          <children>
+            <ToolBar style="-fx-background-color: #2c3848;">
+              <items>
+                <Button mnemonicParsing="false" onAction="#pushClearButton" prefWidth="100.0" style="-fx-background-color: #45b7b8;" text="Clear" textFill="#2c3848">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="GenerateButton" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pushGenerateButton" prefWidth="100.0" style="-fx-background-color: #45b7b8;" text="Generate" textFill="#2c3848">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+              </items>
+            </ToolBar>
+              <Label text="Here you can generate the observations that will be used for bootstrap simulations.">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+              <HBox alignment="CENTER_LEFT" prefHeight="16.0" prefWidth="600.0" spacing="20.0">
+                  <children>
+                      <Label text="What type of data would you like to generate?">
+                         <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                      <ChoiceBox fx:id="TypeOfDataChoiceBox" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" />
+                  </children>
+              </HBox>
+              <HBox prefHeight="0.0" prefWidth="600.0" spacing="20.0">
+                  <children>
+                      <Label alignment="BASELINE_CENTER" text="Set the size of the sample:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                      <Slider fx:id="SampleSizeSlider" majorTickUnit="50.0" max="300.0" min="10.0" minWidth="300.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" snapToTicks="false" style="-fx-background-color: #45b7b8;" />
+                      <Label text="n =">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                      <Label fx:id="SampleSizeLabel" minWidth="-Infinity" text="Label">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  </children>
+              </HBox>
+              <Button fx:id="ConfirmSettingsButton" alignment="CENTER" minWidth="150.0" mnemonicParsing="false" onAction="#pushConfirmSettingsButton" text="Confirm settings">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Button>
+          </children>
+      </VBox>
+   </content>
+</ScrollPane>

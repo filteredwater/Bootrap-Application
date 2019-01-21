@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap App</title>
+
+    <style>
+        body {
+          background-color: #2c3848;
+        }
+
+        h1 {
+          color: white;
+          text-align: left;
+          font-family: fantasy;
+          font-weight: bold;
+          <!--background-color: #2c3848;-->
+        }
+
+        p {
+            color: white;
+          font-family: monospace;
+          font-size: 16px;
+          background-color: #2c3848;
+        }
+
+         ul {
+          color: white;
+          font-family: monospace;
+          font-size: 16px;
+          background-color: #2c3848;
+          list-style-type: square;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        a {
+           color: white;
+          font-family: monospace;
+          font-size: 20px;
+          font-weight: bold;
+          align-self: center;
+        }
+
+
+        .style_bold { font-weight: bold; }
+    </style>
+
+</head>
+
+
+<body>
+
+    <img src="logo.gif" alt="logo" style="width: 20%">
+
+    <h1>Welcome</h1>
+
+    <p><span class="style_bold"> Bootstrap App</span> is a project created for Applied Java course.</p>
+
+    <p>This statistical tool allows you run different resampling schemes on previously generated observations to obtain bootstrap estimates of variance and 95% confidence intervals  for both mean and median.</p>
+
+    <div align="center" style="padding: 20px"><a href="#section2">Read more about generating random observations</a>
+    </div>
+
+    <img src="bootstrap1.jpg" alt="bootstrap1" style="width: 100%">
+
+    <div class="main" id="section2"><h1>Generating random observations</h1>
+        <p><span class="style_bold"> Bootstrap App</span> provides different data generating mechanisms. Independent observations can follow:
+            <ul>
+                <li>normal distribution,</li>
+                <li>exponential distribution.</li>
+            </ul>
+        <p/>
+        <p>Dependent observations can be generated as a stationary process:
+            <ul>
+                <li>moving average with standard normal noise.</li>
+            </ul>
+        </p>
+
+        <p>In each case you can specify parameters of the chosen data generating mechanism and the number of observations.</p>
+
+        <div align="center" style="padding: 20px"><a href="#section3">Read more about bootstrap resampling schemes</a>
+        </div>
+
+    </div>
+
+    <img src="bootstrap2.jpg" alt="bootstrap2" style="width: 100%">
+
+    <div class="main" id="section3"><h1>Bootstrap resampling schemes</h1>
+        <p><span class="style_bold">Bootstrap App</span> implements four resampling schemes:
+            <ul>
+                <li>classic bootstrap (IID),</li>
+                <li>noneverlapping block bootstrap (NBB),</li>
+                <li>moving block bootstrap (MBB),</li>
+                 <li>stationary bootstrap (SB).</li>
+            </ul>
+        </p>
+        <p>For block bootstrap methods you can specify the block length. Since it is randomly chosen (it follows the geometric distribution) in the stationary bootstrap resampling scheme, user specifies the expected block length. </p>
+    </div>
+
+    <br>
+</body>
+</html>

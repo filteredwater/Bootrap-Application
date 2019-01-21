@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="BootstrapSpecificationSceneVBox" prefHeight="600.0" prefWidth="800.0" spacing="10.0" style="-fx-background-color: #45b7b8;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.BootstrapSpecificationSceneController">
+    <children>
+        <ToolBar style="-fx-background-color: #2c3848;">
+            <items>
+                <Button mnemonicParsing="false" onAction="#pushRemoveButton" prefWidth="150.0" style="-fx-background-color: #45b7b8;" text="Remove" textFill="#2c3848">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#pushPlotForMeanButton" prefWidth="150.0" style="-fx-background-color: #45b7b8;" text="Plot for mean" textFill="#2c3848">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#pushPlotForMedianButton" prefWidth="150.0" style="-fx-background-color: #45b7b8;" text="Plot for median" textFill="#2c3848">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#pushSummaryButton" prefWidth="150.0" style="-fx-background-color: #45b7b8;" text="Summary" textFill="#2c3848">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+            </items>
+        </ToolBar>
+        <GridPane hgap="5.0" vgap="1.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="130.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="130.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="1.0" prefWidth="1.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="-Infinity" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="-Infinity" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="IID Bootstrap" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label text="Moving Block Bootstrap" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label text="Nonoverlapping Block Bootstrap" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label text="Stationary Bootstrap" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label text="Number of bootstrap samples" wrapText="true" GridPane.columnIndex="1">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                    <children>
+                        <Slider fx:id="NumberOfBootstrapSamplesIIDSlider" blockIncrement="100.0" majorTickUnit="500.0" minorTickCount="100" showTickLabels="true" showTickMarks="true" />
+                        <Label fx:id="NumberOfBootstrapSamplesIIDLabel" text="Label">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Label text="Block length" wrapText="true" GridPane.columnIndex="2">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <Slider fx:id="NumberOfBootstrapSamplesMBBSlider" blockIncrement="100.0" majorTickUnit="500.0" minorTickCount="100" showTickLabels="true" showTickMarks="true" />
+                        <Label fx:id="NumberOfBootstrapSamplesMBBLabel" text="Label">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <children>
+                        <Slider fx:id="BlockLengthMBBSlider" blockIncrement="100.0" majorTickUnit="500.0" minorTickCount="100" showTickLabels="true" showTickMarks="true" />
+                        <Label fx:id="BlockLengthMBBLabel" text="Label">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Button fx:id="AddMBBButton" mnemonicParsing="false" onAction="#pushAddMBBButton" text="Add" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <Button fx:id="AddNBBButton" mnemonicParsing="false" onAction="#pushAddNBBButton" text="Add" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                <Button fx:id="AddIIDButton" mnemonicParsing="false" onAction="#pushAddIIDButton" text="Add" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Button fx:id="AddSBButton" mnemonicParsing="false" onAction="#pushAddSBButton" text="Add" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <children>
+                        <Slider fx:id="NumberOfBootstrapSamplesNBBSlider" blockIncrement="100.0" majorTickUnit="500.0" minorTickCount="100" showTickLabels="true" showTickMarks="true" />
+                        <Label fx:id="NumberOfBootstrapSamplesNBBLabel" text="Label">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Label opacity="0.5" text="not possible" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <children>
+                        <Slider fx:id="NumberOfBootstrapSamplesSBSlider" blockIncrement="100.0" majorTickUnit="500.0" minorTickCount="100" showTickLabels="true" showTickMarks="true" />
+                        <Label fx:id="NumberOfBootstrapSamplesSBLabel" text="Label">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                    <children>
+                        <Slider fx:id="BlockLengthNBBSlider" />
+                        <Label fx:id="BlockLengthNBBLabel" text="Label">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                    <children>
+                        <Slider fx:id="BlockLengthSBSlider" />
+                        <Label fx:id="BlockLengthSBLabel" text="Label">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+        </GridPane>
+        <Separator prefWidth="200.0" style="-fx-background-color: #2c3848;" />
+        <Label text="Chosen bootstrap simulations:">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </Label>
+    </children>
+</VBox>
